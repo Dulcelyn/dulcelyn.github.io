@@ -1,0 +1,216 @@
+/* Charte graphique alignée sur le CV et la lettre de motivation
+   Couleurs : encre #1F1C18 · texte #2B2722 · rouge #9E3324 · gris #6A645B · beige #F4EFE7
+   Polices : Fraunces (titres) et Figtree (texte), licence SIL Open Font License */
+
+@font-face {
+	font-family: "Fraunces";
+	src: url("fraunces.woff2") format("woff2");
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Fraunces";
+	src: url("fraunces-italic.woff2") format("woff2");
+	font-weight: 100 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Figtree";
+	src: url("figtree.woff2") format("woff2");
+	font-weight: 300 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	--encre: #1F1C18;
+	--texte: #2B2722;
+	--rouge: #9E3324;
+	--rouge-fonce: #7A2519;
+	--gris: #6A645B;
+	--beige: #F4EFE7;
+	--filet: #D9D1C4;
+}
+
+/* Texte courant (les tailles restent celles du modèle, qui s'adaptent à l'écran) */
+
+body, input, select, textarea {
+	color: var(--texte);
+	font-family: "Figtree", "Segoe UI", Helvetica, sans-serif;
+	font-weight: 400;
+}
+
+strong, b {
+	font-weight: 700;
+	color: var(--encre);
+}
+
+em, i {
+	font-family: "Fraunces", Georgia, serif;
+	font-variation-settings: "opsz" 9, "WONK" 0, "SOFT" 0;
+}
+
+a {
+	color: var(--rouge);
+	border-bottom-color: rgba(158, 51, 36, 0.45);
+}
+
+a:hover {
+	color: var(--rouge-fonce) !important;
+	border-bottom-color: transparent;
+}
+
+hr {
+	border-bottom-color: var(--filet);
+}
+
+/* Titres */
+
+h1 {
+	font-family: "Fraunces", Georgia, serif;
+	font-variation-settings: "opsz" 9, "WONK" 0, "SOFT" 0;
+	font-weight: 700;
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	color: var(--encre);
+}
+
+h2, h3, h4, h5, h6 {
+	font-family: "Figtree", "Segoe UI", Helvetica, sans-serif;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	color: var(--rouge);
+}
+
+/* En-tête : bandeau beige, comme la colonne du CV */
+
+#header {
+	background-color: var(--beige);
+	box-shadow: 0 1px 0 var(--filet);
+}
+
+#header .logo {
+	font-family: "Fraunces", Georgia, serif;
+	font-variation-settings: "opsz" 9, "WONK" 0, "SOFT" 0;
+	font-weight: 700;
+	font-size: 1.3em;
+	letter-spacing: 0.01em;
+	text-transform: none;
+	color: var(--encre);
+}
+
+#header .logo .symbol {
+	color: var(--rouge);
+	font-family: "Figtree", sans-serif;
+}
+
+#header nav ul li a[href="#menu"] {
+	background-color: transparent;
+}
+
+#header nav ul li a[href="#menu"]:before {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 8px%3B stroke: %239E3324%3B %7D%3C/style%3E%3Cline x1='0' y1='25' x2='100' y2='25' /%3E%3Cline x1='0' y1='50' x2='100' y2='50' /%3E%3Cline x1='0' y1='75' x2='100' y2='75' /%3E%3C/svg%3E");
+}
+
+#header nav ul li a[href="#menu"]:after {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 8px%3B stroke: %231F1C18%3B %7D%3C/style%3E%3Cline x1='0' y1='25' x2='100' y2='25' /%3E%3Cline x1='0' y1='50' x2='100' y2='50' /%3E%3Cline x1='0' y1='75' x2='100' y2='75' /%3E%3C/svg%3E");
+}
+
+/* Menu latéral */
+
+#menu {
+	background: var(--encre);
+	color: var(--beige);
+}
+
+#menu h2 {
+	color: var(--beige);
+}
+
+#menu > .inner > ul > li {
+	border-top-color: rgba(244, 239, 231, 0.18);
+}
+
+#menu > .inner > ul > li a:hover {
+	color: #E8B4A6 !important;
+}
+
+#menu > .close:before {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 8px%3B stroke: %23E8B4A6%3B %7D%3C/style%3E%3Cline x1='15' y1='15' x2='85' y2='85' /%3E%3Cline x1='85' y1='15' x2='15' y2='85' /%3E%3C/svg%3E");
+}
+
+/* Vignettes de la page d'accueil : rouge et encre en damier */
+
+.tiles article > a h2 {
+	color: #ffffff;
+	letter-spacing: 0.14em;
+}
+
+.tiles article.style1 > .image:before,
+.tiles article.style3 > .image:before,
+.tiles article.style5 > .image:before {
+	background-color: #9E3324;
+}
+
+.tiles article.style2 > .image:before,
+.tiles article.style4 > .image:before,
+.tiles article.style6 > .image:before {
+	background-color: #2B2722;
+}
+
+/* Boutons */
+
+input[type="submit"], input[type="reset"], input[type="button"], button, .button {
+	box-shadow: inset 0 0 0 2px var(--encre);
+	color: var(--encre) !important;
+	font-family: "Figtree", sans-serif;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover, .button:hover {
+	box-shadow: inset 0 0 0 2px var(--rouge);
+	color: var(--rouge) !important;
+}
+
+input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active, button:active, .button:active {
+	background-color: rgba(158, 51, 36, 0.08);
+}
+
+.button.primary {
+	background-color: var(--rouge);
+	color: #ffffff !important;
+}
+
+/* Pied de page : même beige que l'en-tête */
+
+#footer {
+	background-color: var(--beige);
+	border-top: 1px solid var(--filet);
+}
+
+#footer h2 {
+	color: var(--rouge);
+}
+
+#footer .copyright, #footer .copyright a {
+	color: var(--gris);
+}
+
+.icon.style2 {
+	border-color: var(--gris);
+	color: var(--encre);
+}
+
+.icon.style2:hover {
+	color: var(--rouge) !important;
+	border-color: var(--rouge);
+}
+
+.icon.style2:active {
+	background-color: rgba(158, 51, 36, 0.08);
+}
